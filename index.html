@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <style>
+        body {
+            background-color: rgb(248, 243, 243);
+            /* Add other body styles if needed */
+        }
+
+        .gallery-heading {
+            text-align: center;
+            font-size: 36px; /* Increased font size */
+            font-weight: bold; /* Bold text */
+            margin-bottom: 20px;
+            color: #333; /* Adjust the color as needed */
+            /* position: relative; */
+            /*background: rgba(255, 255, 255, 0.7); /* Semi-transparent white background for smoky effect */
+            /*padding: 10px; /* Add padding to enhance the effect */
+            /* border-radius: 10px; Add rounded corners */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+
+        .image-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* Change to 4 columns */
+            gap: 30px; /* Increase the gap as needed */
+            max-width: 1200px; /* Adjust the max-width as needed */
+            margin: 0 auto;
+            padding: 30px;
+        }
+
+        .image-item {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            border-radius: 10px; /* Add rounded corners */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Add transition for smoother effect */
+        }
+
+        .image-item:hover {
+            transform: scale(1.1); /* Scale the image on hover */
+            box-shadow: 0 8px 16px rgba(2, 2, 2, 0.9); /* Increase visibility of box shadow on hover */
+        }
+
+        .image-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Use contain instead of cover */
+            border-radius: 10px; /* Add rounded corners to the image */
+        }
+
+        .image-title {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 10px;
+            background-color: rgba(76, 80, 81, 0.7); /* Adjust the background color and transparency as needed */
+            color: white; /* Text color */
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            text-align: center;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .image-item:hover .image-title {
+            background-color:rgb(50, 126, 50); /* Specify the color you want on hover */
+        }
+
+
+        @media screen and (max-width: 991px) {
+            .image-container {
+                grid-template-columns: 1fr;
+                max-width: 959px;
+                margin: 0 16px;
+                padding: 0;
+                width: auto;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="gallery-heading">Image Gallery</div>
+    <div class="image-container" id="image-container">
+        <!-- Images will be loaded here dynamically -->
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
